@@ -14,17 +14,17 @@ def answer_as_role(question, role, expertise):
         {'role': 'user', 'content': question}
     ]
     
-    return chat_ollama(messages, temperature=2.0)
+    return chat_ollama(messages, "gemma3", temperature=1.0)
 
 question = "In one paragraph, how can I use software engineering to become very respected and/or wealthy?"
 
 # Test different roles
 roles = [
-    ("university professor", "formal computer science education & academia"),
-    ("senior software engineer", "cryptocurrency"),
-    ("tech hobbyist", "GenAI")
-    ("game designer", "Unity"),
-    ("CPU Architecture", "ARM architecture")
+    # ("university professor", "formal computer science education & academia"),
+    # ("senior software engineer", "cryptocurrency"),
+    # ("tech hobbyist", "GenAI"),
+    ("game designer", "unity"),
+    ("CPU Designer", "arm assembly")
 ]
 
 for role, expertise in roles:
