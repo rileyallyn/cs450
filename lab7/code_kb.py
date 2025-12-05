@@ -132,7 +132,8 @@ if __name__ == "__main__":
     queries = [
         "How do I validate user email addresses?",
         "email format validation",
-        "check if email is correct format"
+        "check if email is correct format",
+        "check if email format is valid"
     ]
     
     for query in queries:

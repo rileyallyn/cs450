@@ -125,31 +125,31 @@ for r in results:
     print(f"  Description: {r['description']}")
 
 
-# import ollama
+import ollama
 
-# ollama_client = ollama.Client(host='http://ollama.cs.wallawalla.edu:11434')
+ollama_client = ollama.Client(host='http://ollama.cs.wallawalla.edu:11434')
 
-# def get_ollama_embedding(text):
-#     response = ollama_client.embeddings(
-#         model='nomic-embed-text',
-#         prompt=text
-#     )
-#     return response['embedding']
+def get_ollama_embedding(text):
+    response = ollama_client.embeddings(
+        model='nomic-embed-text',
+        prompt=text
+    )
+    return response['embedding']
 
-# # Compare UniXcoder vs Generic for one operator change
-# original_unix = embedder.encode(original).reshape(1, -1)
-# one_op_unix = embedder.encode(test_cases["one_operator"]["code"]).reshape(1, -1)
+# Compare UniXcoder vs Generic for one operator change
+original_unix = embedder.encode(original).reshape(1, -1)
+one_op_unix = embedder.encode(test_cases["one_operator"]["code"]).reshape(1, -1)
 
-# original_gen = [get_ollama_embedding(original)]
-# one_op_gen = [get_ollama_embedding(test_cases["one_operator"]["code"])]
+original_gen = [get_ollama_embedding(original)]
+one_op_gen = [get_ollama_embedding(test_cases["one_operator"]["code"])]
 
-# unix_sim = cosine_similarity(original_unix, one_op_unix)[0][0]
-# gen_sim = cosine_similarity(original_gen, one_op_gen)[0][0]
+unix_sim = cosine_similarity(original_unix, one_op_unix)[0][0]
+gen_sim = cosine_similarity(original_gen, one_op_gen)[0][0]
 
-# print("\n" + "="*70)
-# print("UniXcoder vs Generic Embedding Comparison")
-# print("="*70)
-# print(f"UniXcoder similarity (< → >): {unix_sim:.4f}")
-# print(f"Generic similarity (< → >):   {gen_sim:.4f}")
-# print(f"Difference:                   {abs(unix_sim - gen_sim):.4f}")
-# print("\nWhich model better recognizes the logical change?")
+print("\n" + "="*70)
+print("UniXcoder vs Generic Embedding Comparison")
+print("="*70)
+print(f"UniXcoder similarity (< → >): {unix_sim:.4f}")
+print(f"Generic similarity (< → >):   {gen_sim:.4f}")
+print(f"Difference:                   {abs(unix_sim - gen_sim):.4f}")
+print("\nWhich model better recognizes the logical change?")
