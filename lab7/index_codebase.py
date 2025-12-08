@@ -15,7 +15,6 @@ def parse_python_file(filepath):
             docstring = ast.get_docstring(node)
             func_lines = code.split('\n')[node.lineno-1:node.end_lineno]
             func_code = '\n'.join(func_lines)
-            
             functions.append({
                 'name': node.name,
                 'code': func_code,

@@ -26,4 +26,6 @@
 
 6. Which query types work best with UniXcoder?
 
+   - Natural Language questions like "I want to create a user account"
+
 7. How does UniXcoder handle vague vs specific queries?
